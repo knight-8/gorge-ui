@@ -2,7 +2,7 @@
  * @Author: jiajunwa@outlook.com jiajunwa@outlook.com
  * @Date: 2022-08-05 03:33:11
  * @LastEditors: jiajunwa@outlook.com jiajunwa@outlook.com
- * @LastEditTime: 2022-08-08 21:56:22
+ * @LastEditTime: 2022-08-08 23:00:37
  * @FilePath: \com-ui-1\src\views\Doc.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -38,15 +38,16 @@ export default {
     }
 }
 </script>
-<style scoped lang="scss">
-aside{
+<style lang="scss" scoped>
+aside {
     background: lightblue;
     width: 150px;
     padding: 16px;
     position: fixed;
     top: 0;
     left: 0;
-    margin-top: 93px;
+    padding-top: 70px;
+    height: 100%;
     > h2 {
         margin-bottom: 4px;
     }
@@ -55,5 +56,8 @@ aside{
           padding: 4px 0;
       }
     }
+}
+main {
+    overflow: auto;
 }
 </style>
