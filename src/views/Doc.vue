@@ -2,7 +2,7 @@
  * @Author: jiajunwa@outlook.com jiajunwa@outlook.com
  * @Date: 2022-08-05 03:33:11
  * @LastEditors: jiajunwa@outlook.com jiajunwa@outlook.com
- * @LastEditTime: 2022-08-10 12:35:12
+ * @LastEditTime: 2022-08-10 20:31:36
  * @FilePath: \com-ui-1\src\views\Doc.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -10,7 +10,7 @@
     <TopNav/>
     <div class="content">
         <aside v-if="asideVisible">
-            <h2>组件列表</h2>
+            <h2>组列表</h2>
             <ol>
                 <li>
                     <router-link to="/doc/switch">Switch组件</router-link>
@@ -50,11 +50,12 @@ aside {
     background: lightblue;
     width: 150px;
     padding: 16px;
-    position: fixed;
+    @media (max-width: 500px) {
+    position : fixed;
     top: 0;
     left: 0;
     padding-top: 70px;
-    height: 100%;
+}
     > h2 {
         margin-bottom: 4px;
     }
@@ -64,7 +65,5 @@ aside {
       }
     }
 }
-main {
-    overflow: auto;
-}
+
 </style>

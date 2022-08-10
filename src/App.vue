@@ -2,7 +2,7 @@
  * @Author: jiajunwa@outlook.com jiajunwa@outlook.com
  * @Date: 2022-08-04 13:07:20
  * @LastEditors: jiajunwa@outlook.com jiajunwa@outlook.com
- * @LastEditTime: 2022-08-09 03:17:40
+ * @LastEditTime: 2022-08-10 20:36:54
  * @FilePath: \com-ui-1\src\App.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE 
 -->
@@ -16,7 +16,8 @@ import { provide, ref } from 'vue'
 export default {
   name: 'App',
   setup(){
-    const asideVisible = ref(false)
+    const width = document.documentElement.clientWidth
+    const asideVisible = ref(width < 500 ? false : true)
     provide('asideVisible', asideVisible)
   },
   mounted(){
