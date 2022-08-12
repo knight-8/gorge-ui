@@ -3,11 +3,10 @@
     Switch 的文档
     <Switch/>
   </div>
-  <Switch/>
 </template>
 
 <script lang="ts">
-import { Switch } from '../lib/Switch.vue'
+import Switch  from '../lib/Switch.vue'
 
 export default ({
     components: { Switch }
