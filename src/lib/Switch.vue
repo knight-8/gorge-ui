@@ -2,7 +2,7 @@
  * @Author: jiajunwa@outlook.com jiajunwa@outlook.com
  * @Date: 2022-08-12 01:09:17
  * @LastEditors: jiajunwa@outlook.com jiajunwa@outlook.com
- * @LastEditTime: 2022-08-12 11:24:03
+ * @LastEditTime: 2022-08-12 12:58:31
  * @FilePath: \com-ui-1\src\lib\Switch.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -43,6 +43,7 @@ span{
     width: $h2;
     background: white;
     border-radius: $h/2;
+    transition: left 250ms;
 }
 button.checked{
     background: blue;
@@ -50,4 +51,5 @@ button.checked{
 button.checked > span {
     left: calc(100% - #{$h2} - 2px); 
 }
+
 </style>
