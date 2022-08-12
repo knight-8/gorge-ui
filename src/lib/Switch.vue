@@ -2,18 +2,25 @@
  * @Author: jiajunwa@outlook.com jiajunwa@outlook.com
  * @Date: 2022-08-12 01:09:17
  * @LastEditors: jiajunwa@outlook.com jiajunwa@outlook.com
- * @LastEditTime: 2022-08-12 11:02:18
+ * @LastEditTime: 2022-08-12 11:24:03
  * @FilePath: \com-ui-1\src\lib\Switch.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <template>
-    <button><span></span></button>
+    <button @click="toggle" :class="{checked: checked}"><span></span></button>
 </template>
 
 <script>
+import { ref } from 'vue'
 
 export default {
-    
+    setup(){
+        const checked = ref(false)
+        const toggle= ()=> {
+            checked.value = !checked.value
+        }
+        return {checked, toggle} 
+    }
 }
 </script>
 
@@ -24,7 +31,7 @@ button{
     height: $h;
     width: $h*2;
     border:none;
-    background: blue;
+    background: grey;
     border-radius: $h/2;
     position: relative;
 }
@@ -37,7 +44,10 @@ span{
     background: white;
     border-radius: $h/2;
 }
-button:hover > span {
+button.checked{
+    background: blue;
+}
+button.checked > span {
     left: calc(100% - #{$h2} - 2px); 
 }
 </style>
