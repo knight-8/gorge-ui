@@ -1,6 +1,5 @@
 <template>
      <div>
-    Switch 的文档
     <Switch/>
   </div>
 </template>
