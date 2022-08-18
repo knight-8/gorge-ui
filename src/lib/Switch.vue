@@ -8,7 +8,7 @@
 -->
 <template>
     <button @click="toggle" :class="{checked: value}"><span></span></button>
-    <div>{{value}}</div>
+    <div>{{value}} 11</div>
 </template>
 
 <script>
@@ -20,7 +20,7 @@ export default {
     },
     setup(props, context){
         const toggle= ()=> {
-            context.emit('input', !props.value)
+            context.emit('update:value', !props.value)
         };
         return { toggle } ;
     }
