@@ -2,13 +2,13 @@
  * @Author: jiajunwa@outlook.com jiajunwa@outlook.com
  * @Date: 2022-08-12 01:09:17
  * @LastEditors: jiajunwa@outlook.com jiajunwa@outlook.com
- * @LastEditTime: 2022-08-18 01:47:35
+ * @LastEditTime: 2022-08-18 14:55:06
  * @FilePath: \com-ui-1\src\lib\Switch.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <template>
     <button @click="toggle" :class="{checked: value}"><span></span></button>
-    <div>{{value}} 11</div>
+    <div>{{value}}</div>
 </template>
 
 <script>
@@ -37,8 +37,7 @@ button{
     background: grey;
     border-radius: $h/2;
     position: relative;
-}
-span{
+    > span{
     position: absolute;
     top: 2px;
     left: 2px;
@@ -47,11 +46,14 @@ span{
     background: white;
     border-radius: $h/2;
     transition: left 250ms;
+    }
 }
+
 button.checked{
     background: blue;
-}
-button.checked > span {
+    > span {
     left: calc(100% - #{$h2} - 2px); 
+    }
 }
+
 </style>
