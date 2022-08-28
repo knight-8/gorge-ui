@@ -2,7 +2,7 @@
  * @Author: jiajunwa@outlook.com jiajunwa@outlook.com
  * @Date: 2022-08-11 22:52:10
  * @LastEditors: jiajunwa@outlook.com jiajunwa@outlook.com
- * @LastEditTime: 2022-08-27 13:14:01
+ * @LastEditTime: 2022-08-28 12:23:39
  * @FilePath: \com-ui-1\src\components\Button.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -10,11 +10,10 @@
     <div>这是Button页面</div>
     <h1>示例1</h1>
     <div>
-        <Button @click="onClick"
-                @focus="onClick">
-            你好
-        </Button><br>
-        
+        <Button>你好</Button>
+        <Button theme="button">你好</Button><br>
+        <Button theme="link">你好</Button>
+        <Button theme="text">你好 \</Button>
     </div>
 </template>
 
