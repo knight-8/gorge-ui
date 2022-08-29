@@ -2,12 +2,12 @@
  * @Author: jiajunwa@outlook.com jiajunwa@outlook.com
  * @Date: 2022-08-12 01:09:17
  * @LastEditors: jiajunwa@outlook.com jiajunwa@outlook.com
- * @LastEditTime: 2022-08-18 14:55:06
+ * @LastEditTime: 2022-08-29 10:55:27
  * @FilePath: \com-ui-1\src\lib\Switch.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <template>
-    <button @click="toggle" :class="{checked: value}"><span></span></button>
+    <button class="gorge-switch" @click="toggle" :class="{'gorge-checked': value}"><span></span></button>
     <div>{{value}}</div>
 </template>
 
@@ -27,10 +27,10 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $h: 22px;
 $h2: $h - 4px;
-button{
+.gorge-switch{
     height: $h;
     width: $h*2;
     border:none;
@@ -49,7 +49,7 @@ button{
     }
 }
 
-button.checked{
+.gorge-switch.gorge-checked{
     background: blue;
     > span {
     left: calc(100% - #{$h2} - 2px); 
