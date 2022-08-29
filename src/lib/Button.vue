@@ -3,7 +3,7 @@ import { computed } from 'vue'
  * @Author: jiajunwa@outlook.com jiajunwa@outlook.com
  * @Date: 2022-08-18 18:34:14
  * @LastEditors: jiajunwa@outlook.com jiajunwa@outlook.com
- * @LastEditTime: 2022-08-29 13:59:56
+ * @LastEditTime: 2022-08-29 14:49:45
  * @FilePath: \com-ui-1\src\lib\Button.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -90,7 +90,6 @@ $radius:4px;
     &::-moz-focus-inner{
         border: 0;
     }
-    &.gorge-theme-button{
         &.gorge-size-big{
             font-size:24px;
             height: 48px;
@@ -101,6 +100,5 @@ $radius:4px;
             height: 20px;
             padding: 0 4px;
         }
-    }
 }
 </style>
