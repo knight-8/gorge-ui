@@ -1,29 +1,45 @@
+import { computed } from 'vue'
 <!--
  * @Author: jiajunwa@outlook.com jiajunwa@outlook.com
  * @Date: 2022-08-18 18:34:14
  * @LastEditors: jiajunwa@outlook.com jiajunwa@outlook.com
- * @LastEditTime: 2022-08-29 10:42:45
+ * @LastEditTime: 2022-08-29 13:59:56
  * @FilePath: \com-ui-1\src\lib\Button.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <template>
-<div>
+
     <button class="gorge-button"
-            :class="`theme-${theme}`">
+            :class="classes">
         <slot />
     </button>
-</div>
+
 
 </template>
 <script lang="ts">
+import { computed } from '@vue/runtime-core';
 
 export default{
     props: {
         theme: {
             type: String,
             default: 'button'
+        },
+        size: {
+            type: String,
+            default: 'normal'
         }
-    }
+    },
+     setup(props) {
+            const { theme, size } = props;
+            const classes = computed(() => {
+                return {
+                    [`gorge-theme-${theme}`]: theme,
+                    [`gorge-size-${size}`]: size
+                }
+            });
+            return{ classes }
+        }
 }
 </script>
 
@@ -53,14 +69,38 @@ $radius:4px;
     }
     &:hover,
     &:focus {
-        color: $blue;
         border-color: $blue;
+        background: darken(white, 5%);
+        color: lighten($blue, 10%);
+    }
+    &.gorge-theme-text {
+        border-color: transparent;
+        box-shadow: none;
+        color: inherit;
+    }
+    &.gorge-theme-link {
+        border-color: transparent;
+        box-shadow: none;
+        color: $blue;
     }
     &:focus {
         outline: none;
     }
+    
     &::-moz-focus-inner{
         border: 0;
+    }
+    &.gorge-theme-button{
+        &.gorge-size-big{
+            font-size:24px;
+            height: 48px;
+            padding: 0 16px;
+        }
+        &.gorge-size-small{
+            font-size: 12px;
+            height: 20px;
+            padding: 0 4px;
+        }
     }
 }
 </style>
