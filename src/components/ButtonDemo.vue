@@ -2,7 +2,7 @@
  * @Author: jiajunwa@outlook.com jiajunwa@outlook.com
  * @Date: 2022-08-11 22:52:10
  * @LastEditors: jiajunwa@outlook.com jiajunwa@outlook.com
- * @LastEditTime: 2022-08-29 15:36:57
+ * @LastEditTime: 2022-08-30 01:33:59
  * @FilePath: \com-ui-1\src\components\Button.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -50,6 +50,11 @@
             <Button disabled>禁用按钮</Button>
             <Button theme="link" disabled>禁用链接按钮</Button>
             <Button theme="text" disabled>禁用文本按钮</Button>
+        </div>
+        <h1>示例5</h1>
+        <div>
+            <Button loading>加载中</Button>
+            <Button>加载完毕</Button>
         </div>
 </template>
 

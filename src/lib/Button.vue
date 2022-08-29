@@ -3,12 +3,15 @@ import { computed } from 'vue'
  * @Author: jiajunwa@outlook.com jiajunwa@outlook.com
  * @Date: 2022-08-18 18:34:14
  * @LastEditors: jiajunwa@outlook.com jiajunwa@outlook.com
- * @LastEditTime: 2022-08-29 18:13:41
+ * @LastEditTime: 2022-08-30 02:01:40
  * @FilePath: \com-ui-1\src\lib\Button.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <template>
-  <button class="gorge-button" :class="classes" :disabled="disabled">
+  <button class="gorge-button"
+    :class="classes"
+    :disabled="disabled">
+    <span v-if="loading" class="gorge-loadingIndicator"></span>
     <slot />
   </button>
 </template>
@@ -30,12 +33,16 @@ export default {
       default: "normal",
     },
     disabled: {
-        type: Boolean,
-        defalut: 'false'
-    }
+      type: Boolean,
+      defalut: false,
+    },
+    loading: {
+      type: Boolean,
+      default: false,
+    },
   },
   setup(props) {
-    const { theme, size, level, } = props;
+    const { theme, size, level } = props;
     const classes = computed(() => {
       return {
         [`gorge-theme-${theme}`]: theme,
@@ -71,6 +78,7 @@ $grey: grey;
   border-radius: $radius;
   box-shadow: $radius;
   box-shadow: 0 1px 0 fade-out(black, 0.95);
+  transition: background 259ms;
   & + & {
     margin-left: 8px;
   }
@@ -155,18 +163,34 @@ $grey: grey;
   }
   &.gorge-theme-button {
     &[disabled] {
-        cursor: not-allowed;
-        color: $grey;
-        &:hover {
-            border-color: $grey;
-        }
+      cursor: not-allowed;
+      color: $grey;
+      &:hover {
+        border-color: $grey;
+      }
     }
   }
-  &.gorge-theme-link, &.gorge-theme-text {
-      &[disabled] {
-          cursor: not-allowed;
-          color: $grey;
-      }
+  &.gorge-theme-link,
+  &.gorge-theme-text {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+    }
+  }
+  > .gorge-loadingIndicator {
+      width: 14px;
+      height: 14px;
+      display: inline-block;
+      margin-right: 4px;
+      border-radius: 8px;
+      border-color: $blue $blue $blue transparent;
+      border-style: solid;
+      border-width: 2px;
+      animation: gorge-spin 1s infinite linear;
+  }
+  @keyframes gorge-spin {
+      0%{transform: rotate(0deg)} 
+      100%{transform: rotate(360deg)} 
   }
 }
 </style>
