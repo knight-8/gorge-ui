@@ -2,7 +2,7 @@
  * @Author: jiajunwa@outlook.com jiajunwa@outlook.com
  * @Date: 2022-08-30 13:20:24
  * @LastEditors: jiajunwa@outlook.com jiajunwa@outlook.com
- * @LastEditTime: 2022-08-30 18:54:31
+ * @LastEditTime: 2022-09-06 17:14:27
  * @FilePath: \com-ui-1\src\lib\Dialog.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -12,12 +12,11 @@
     <div class="gorge-dialog-wrapper">
       <div class="gorge-dialog">
         <header>
-            标题
+            <slot name="title" />
             <span @click="close" class="gorge-dialog-close"></span>
         </header>
         <main>
-          <p>第一行字</p>
-          <p>第二行字</p>
+          <slot name="content" />
         </main>
         <footer>
           <Button level="main" @click="ok">OK</Button>
@@ -37,6 +36,7 @@ export default {
     Button,
   },
   props: {
+    
     visible: {
       type: Boolean,
       default: false,
