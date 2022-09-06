@@ -2,28 +2,30 @@
  * @Author: jiajunwa@outlook.com jiajunwa@outlook.com
  * @Date: 2022-08-30 13:20:24
  * @LastEditors: jiajunwa@outlook.com jiajunwa@outlook.com
- * @LastEditTime: 2022-09-06 17:14:27
+ * @LastEditTime: 2022-09-06 17:49:33
  * @FilePath: \com-ui-1\src\lib\Dialog.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <template>
   <template v-if="visible">
-    <div class="gorge-dialog-overlay" @click="OnClickOverlay"></div>
-    <div class="gorge-dialog-wrapper">
-      <div class="gorge-dialog">
-        <header>
+    <Teleport to="body">
+      <div class="gorge-dialog-overlay" @click="OnClickOverlay"></div>
+      <div class="gorge-dialog-wrapper">
+        <div class="gorge-dialog">
+          <header>
             <slot name="title" />
             <span @click="close" class="gorge-dialog-close"></span>
-        </header>
-        <main>
-          <slot name="content" />
-        </main>
-        <footer>
-          <Button level="main" @click="ok">OK</Button>
-          <Button @click="cancel">Cancel</Button>
-        </footer>
+          </header>
+          <main>
+            <slot name="content" />
+          </main>
+          <footer>
+            <Button level="main" @click="ok">OK</Button>
+            <Button @click="cancel">Cancel</Button>
+          </footer>
+        </div>
       </div>
-    </div>
+    </Teleport>
   </template>
 </template>
   
@@ -36,43 +38,42 @@ export default {
     Button,
   },
   props: {
-    
     visible: {
       type: Boolean,
       default: false,
     },
     closeOnClickOverlay: {
-        type: Boolean,
-        default: true
+      type: Boolean,
+      default: true,
     },
     ok: {
-        type: Function
+      type: Function,
     },
     cancel: {
-        type: Function
-    }
+      type: Function,
+    },
   },
   setup(props, context) {
-      const close = () => {
-          context.emit('update:visible', false)
+    const close = () => {
+      context.emit("update:visible", false);
+    };
+    const OnClickOverlay = () => {
+      if (props.closeOnClickOverlay) {
+        close();
       }
-      const OnClickOverlay = () => {
-          if(props.closeOnClickOverlay){
-            close()
-          }
+    };
+    const ok = () => {
+      if (props.ok && props.ok() !== false) {
+        close();
       }
-      const ok = () => {
-          if(props.ok && props.ok() !== false){
-            close() 
-          }
+    };
+    const cancel = () => {
+      if (props.cancel?.() !== false) {
+        close();
       }
-      const cancel = () => {
-          if(props.cancel?.() !== false){
-            close()
-          }
-      }
-      return { close, OnClickOverlay, ok, cancel }
-  }
+    };
+    return { close, OnClickOverlay, ok, cancel };
+  },
 };
 </script>
 
