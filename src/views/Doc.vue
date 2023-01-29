@@ -25,6 +25,9 @@
                 <li>
                     <router-link to="/doc/tabs">Tabs组件</router-link>
                 </li>
+                <li>
+                    <router-link to="/doc/slide">轮播图</router-link>
+                </li>
             </ol>
         </aside>
         <main>
