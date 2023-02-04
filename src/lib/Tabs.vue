@@ -2,17 +2,17 @@
  * @Author: jiajunwa@outlook.com jiajunwa@outlook.com
  * @Date: 2023-02-03 10:58:13
  * @LastEditors: jiajunwa@outlook.com jiajunwa@outlook.com
- * @LastEditTime: 2023-02-04 13:23:01
+ * @LastEditTime: 2023-02-04 13:35:30
  * @FilePath: \com-ui-1\src\lib\Tabs.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <template>
     <div class="gorge-tabs">
-        <div class="garge-tabs-nav">
+        <div class="gorge-tabs-nav">
             <div class="gorge-tabs-nav-item" v-for='(t, index) in titles' :key='index'>{{t}}</div>
         </div>
         <div class="gorge-tabs-content">
-            <component v-for="(c, index) in defaults" :is='c' :key="index"/>
+            <component class="gorge-tabs-content-item" v-for="(c, index) in defaults" :is='c' :key="index"/>
         </div>
     </div>
 </template>
