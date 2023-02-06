@@ -2,7 +2,7 @@
  * @Author: jiajunwa@outlook.com jiajunwa@outlook.com
  * @Date: 2023-02-03 10:58:13
  * @LastEditors: jiajunwa@outlook.com jiajunwa@outlook.com
- * @LastEditTime: 2023-02-06 19:27:38
+ * @LastEditTime: 2023-02-06 19:51:03
  * @FilePath: \com-ui-1\src\lib\Tabs.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -89,7 +89,7 @@ $border-color: #d9d9d9;
         &-indicator {
             position: absolute;
             height: 3px;
-            background: $bule;
+            background: $blue;
             left: 0;
             bottom: -1px;
             width: 100px;
