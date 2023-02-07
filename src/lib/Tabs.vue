@@ -2,7 +2,7 @@
  * @Author: jiajunwa@outlook.com jiajunwa@outlook.com
  * @Date: 2023-02-03 10:58:13
  * @LastEditors: jiajunwa@outlook.com jiajunwa@outlook.com
- * @LastEditTime: 2023-02-08 00:23:45
+ * @LastEditTime: 2023-02-08 00:43:35
  * @FilePath: \com-ui-1\src\lib\Tabs.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -11,7 +11,7 @@
         <div class="gorge-tabs-nav" ref="container">
             <div class="gorge-tabs-nav-item" :class="{selected: t===selected}"
              v-for='(t, index) in titles' @click="select(t)" :key='index'
-              :ref="el => {if (el) navItems[index] = el }">{{t}}</div>
+              :ref="el => {if (t === selected) selectedItem = el }">{{t}}</div>
              <div class="gorge-tabs-nav-indicator" ref="indicator"></div>
         </div>
         
@@ -39,17 +39,18 @@ export default {
     },
     setup(props, context) {
         const defaults = context.slots.default();
-        const navItems = ref < HTMLDivELement[] >([])
+        //const navItems = ref < HTMLDivELement[] >([])
+        const selectedItem = ref<HTMLDivElement>(null)
         const indicator = ref < HTMLDivElement >(null)
         const container = ref < HTMLDivElement >(null)
         const x = () => {
-            const divs = navItems.value
+            /* const divs = navItems.value
             const result = divs.filter(div => div.classList.
-            contains('selected'))[0]
-            const {width} = result.getBoundingClientRect()
+            contains('selected'))[0] */
+            const {width} = selectedItem.value.getBoundingClientRect()
             indicator.value.style.width = width + 'px'
             const {left:left1} = container.value.getBoundingClientRect()
-            const {left:left2} = result.getBoundingClientRect()
+            const {left:left2} = selectedItem.value.getBoundingClientRect()
             const left = left2 - left1
             indicator.value.style.left = left + 'px'
         }
@@ -79,9 +80,9 @@ export default {
             titles,
             select,
             current,
-            navItems,
             indicator,
-            container
+            container,
+            selectedItem
         }
     },
 }
