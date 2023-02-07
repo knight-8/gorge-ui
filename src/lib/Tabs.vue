@@ -2,16 +2,17 @@
  * @Author: jiajunwa@outlook.com jiajunwa@outlook.com
  * @Date: 2023-02-03 10:58:13
  * @LastEditors: jiajunwa@outlook.com jiajunwa@outlook.com
- * @LastEditTime: 2023-02-06 19:51:03
+ * @LastEditTime: 2023-02-08 00:23:45
  * @FilePath: \com-ui-1\src\lib\Tabs.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <template>
     <div class="gorge-tabs">
-        <div class="gorge-tabs-nav">
+        <div class="gorge-tabs-nav" ref="container">
             <div class="gorge-tabs-nav-item" :class="{selected: t===selected}"
-             v-for='(t, index) in titles' @click="select(t)" :key='index'>{{t}}</div>
-             <div class="gorge-tabs-nav-indicator"></div>
+             v-for='(t, index) in titles' @click="select(t)" :key='index'
+              :ref="el => {if (el) navItems[index] = el }">{{t}}</div>
+             <div class="gorge-tabs-nav-indicator" ref="indicator"></div>
         </div>
         
         <div class="gorge-tabs-content">
@@ -26,7 +27,9 @@
 import Tab from './Tab.vue'
 import {
     computed,
-    ref
+    ref,
+    onMounted,
+    onUpdated
 } from 'vue'
 export default {
     props: {
@@ -36,7 +39,27 @@ export default {
     },
     setup(props, context) {
         const defaults = context.slots.default();
-        //const indicator = ref < HTMLDivElement > (null)
+        const navItems = ref < HTMLDivELement[] >([])
+        const indicator = ref < HTMLDivElement >(null)
+        const container = ref < HTMLDivElement >(null)
+        const x = () => {
+            const divs = navItems.value
+            const result = divs.filter(div => div.classList.
+            contains('selected'))[0]
+            const {width} = result.getBoundingClientRect()
+            indicator.value.style.width = width + 'px'
+            const {left:left1} = container.value.getBoundingClientRect()
+            const {left:left2} = result.getBoundingClientRect()
+            const left = left2 - left1
+            indicator.value.style.left = left + 'px'
+        }
+        onMounted(() => {
+            x()
+        })
+        onUpdated(() => {
+            x()
+        })
+
         defaults.forEach((tag) => {
             if(tag.type !== Tab){
                 throw new Error('Tabs 子标签必须是 Tab')
@@ -55,7 +78,10 @@ export default {
             defaults,
             titles,
             select,
-            current
+            current,
+            navItems,
+            indicator,
+            container
         }
     },
 }
