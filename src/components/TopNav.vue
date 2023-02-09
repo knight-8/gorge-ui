@@ -2,7 +2,7 @@
  * @Author: jiajunwa@outlook.com jiajunwa@outlook.com
  * @Date: 2022-08-07 17:12:51
  * @LastEditors: jiajunwa@outlook.com jiajunwa@outlook.com
- * @LastEditTime: 2023-02-09 12:55:08
+ * @LastEditTime: 2023-02-09 18:08:44
  * @FilePath: \com-ui-1\src\components\TopNav.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -13,13 +13,14 @@
                 <use xlink:href="#icon-jie-copy"></use>
             </svg>
         </div>
-        <div class="toggleAside" @click="toggleMenu"></div>
+        <div v-if="toggleMenuButtonVisible" class="toggleAside" @click="toggleMenu"></div>
         <div class="menu">
             <ul>
                 <li>
                     <router-link to="/doc">文档</router-link>
                 </li>
             </ul>  
+            
         </div>
     </div>
 </template>
@@ -28,9 +29,14 @@
 import { inject, Ref } from "vue";
 
 export default {
+    props: {
+        toggleMenuButtonVisible:{
+            type: Boolean,
+            default: false
+        }
+    },
     setup(){
         const asideVisible = inject<Ref<boolean>>("asideVisible")
-        //console.log("topnav获取的asideVisible为", asideVisible.value )
         const toggleMenu = ()=>{
             asideVisible.value = !asideVisible.value 
             console.log(asideVisible.value);

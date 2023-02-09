@@ -79,6 +79,9 @@ $color: #196e6a;
 
   @media (min-width: 800px) {
     width: 800px;
+    > li{
+        margin: 16px auto;
+    }
   }
 
   @media (min-width: 1200px) {

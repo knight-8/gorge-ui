@@ -2,13 +2,13 @@
  * @Author: jiajunwa@outlook.com jiajunwa@outlook.com
  * @Date: 2022-08-05 03:33:11
  * @LastEditors: jiajunwa@outlook.com jiajunwa@outlook.com
- * @LastEditTime: 2022-08-12 00:52:38
+ * @LastEditTime: 2023-02-09 18:17:00
  * @FilePath: \com-ui-1\src\views\Doc.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <template>
   <div class="layout">
-    <TopNav class="nav"/>
+    <TopNav toggleMenuButtonVisible class="nav"/>
     <div class="content">
         <aside v-if="asideVisible">
             <h2>组件列表</h2>
@@ -48,7 +48,7 @@ export default {
     },
     setup(){
         const asideVisible = inject<Ref<boolean>>("asideVisible")
-        console.log("Docaside获取的asideVisible为",asideVisible.value)
+        //console.log("Docaside获取的asideVisible为",asideVisible.value)
         return {asideVisible}
     }
 }
