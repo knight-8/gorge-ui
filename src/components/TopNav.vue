@@ -2,7 +2,7 @@
  * @Author: jiajunwa@outlook.com jiajunwa@outlook.com
  * @Date: 2022-08-07 17:12:51
  * @LastEditors: jiajunwa@outlook.com jiajunwa@outlook.com
- * @LastEditTime: 2023-02-09 18:08:44
+ * @LastEditTime: 2023-02-10 02:07:42
  * @FilePath: \com-ui-1\src\components\TopNav.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -53,6 +53,12 @@ export default {
 <style lang="scss" scoped>
 $color:#196e6a;
 .topnav {
+    background: linear-gradient(
+    145deg,
+    rgba(227, 255, 253, 1) 0%,
+    rgba(183, 233, 230, 1) 100%
+  );
+    box-shadow: gray 5px 5px 13px;
     color: $color;
     display: flex;
     padding: 16px;
