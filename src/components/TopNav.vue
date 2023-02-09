@@ -2,13 +2,17 @@
  * @Author: jiajunwa@outlook.com jiajunwa@outlook.com
  * @Date: 2022-08-07 17:12:51
  * @LastEditors: jiajunwa@outlook.com jiajunwa@outlook.com
- * @LastEditTime: 2023-02-08 22:47:09
+ * @LastEditTime: 2023-02-09 12:55:08
  * @FilePath: \com-ui-1\src\components\TopNav.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <template>
     <div class="topnav">
-        <div class="logo">LOGO</div>
+        <div class="logo">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-jie-copy"></use>
+            </svg>
+        </div>
         <div class="toggleAside" @click="toggleMenu"></div>
         <div class="menu">
             <ul>
@@ -25,7 +29,7 @@ import { inject, Ref } from "vue";
 export default {
     setup(){
         const asideVisible = inject<Ref<boolean>>("asideVisible")
-        console.log("topnav获取的asideVisible为", asideVisible.value )
+        //console.log("topnav获取的asideVisible为", asideVisible.value )
         const toggleMenu = ()=>{
             asideVisible.value = !asideVisible.value 
             console.log(asideVisible.value);
@@ -36,9 +40,11 @@ export default {
 }
 </script>
 
+
 <style lang="scss" scoped>
+$color:#196e6a;
 .topnav {
-    //background: pink;
+    color: $color;
     display: flex;
     padding: 16px;
     position: relative;
@@ -73,4 +79,10 @@ export default {
         > .toggleAside{display: inline-block;}
     }
 }
+    .icon {
+       width: 3em; height: 3em;
+       vertical-align: -0.15em;
+       fill: currentColor;
+       overflow: hidden;
+    }
 </style>
