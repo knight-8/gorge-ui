@@ -1261,6 +1261,11 @@
   dependencies:
     "sourcemap-codec" "^1.4.8"
 
+"marked@^1.2.9":
+  "integrity" "sha512-H8lIX2SvyitGX+TRdtS06m1jHMijKN/XjfH6Ooii9fvxMlh8QdqBfBDkGUpMWH2kQNrtixjzYUa3SH8ROTgRRw=="
+  "resolved" "https://registry.npmmirror.com/marked/-/marked-1.2.9.tgz"
+  "version" "1.2.9"
+
 "media-typer@0.3.0":
   "integrity" "sha512-dq+qelQ9akHpcOl/gUVRTxVIOkAJ1wR3QAvb4RsVjS8oVoFjDGTc679wJYmUmknUF5HwMLOgb5O+a3KxfWapPQ=="
   "resolved" "https://registry.npmmirror.com/media-typer/-/media-typer-0.3.0.tgz"
