@@ -2,7 +2,7 @@
  * @Author: jiajunwa@outlook.com jiajunwa@outlook.com
  * @Date: 2022-08-05 03:33:17
  * @LastEditors: jiajunwa@outlook.com jiajunwa@outlook.com
- * @LastEditTime: 2023-02-09 13:10:24
+ * @LastEditTime: 2023-02-09 15:22:34
  * @FilePath: \com-ui-1\src\views\Home.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -20,15 +20,31 @@
       </div>
     </div>
   </div>
-  <svg class="icon" aria-hidden="true">
-    <use xlink:href="#icon-Vue"></use>
-  </svg>
-  <svg class="icon" aria-hidden="true">
-    <use xlink:href="#icon-ts"></use>
-  </svg>
-  <svg class="icon" aria-hidden="true">
-    <use xlink:href="#icon-lights"></use>
-  </svg>
+  <div class="features">
+    <ul>
+      <li>
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-Vue"></use>
+        </svg>
+        <h3>基于Vue3</h3>
+        <p>骄傲地使用了 Vue 3 Composition API</p>
+      </li>
+      <li>
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-ts"></use>
+        </svg>
+        <h3>基于 TypeScript</h3>
+        <p>源代码采用 TypeScript 书写（非严格检查）</p>
+      </li>
+      <li>
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-lights"></use>
+        </svg>
+        <h3>代码易读</h3>
+        <p>每个组件的源代码都极其简洁</p>
+      </li>
+    </ul>
+  </div>
 </template>
 <script lang="ts">
 import TopNav from "../components/TopNav.vue";
@@ -48,7 +64,59 @@ $color: #196e6a;
     rgba(227, 255, 253, 1) 0%,
     rgba(183, 233, 230, 1) 100%
   );
-  clip-path: ellipse(80% 60% at 50% 40%)
+  clip-path: ellipse(80% 60% at 50% 40%);
+}
+@media (min-width: 800px) {
+  li {
+      margin: 16px auto;
+  }
+}
+.features {
+  > svg {
+    margin: 64px auto;
+    width: 400px;
+  }
+
+  @media (min-width: 800px) {
+    width: 800px;
+  }
+
+  @media (min-width: 1200px) {
+    width: 1200px;
+  }
+
+  > ul {
+    display: flex;
+    flex-wrap: wrap;
+
+    > li {
+      width: 400px;
+      margin: 16px 0;
+      display: grid;
+      justify-content: start;
+      align-content: space-between;
+      grid-template-areas:
+        "icon title"
+        "icon text";
+      grid-template-columns: 80px auto;
+      grid-template-rows: 1fr auto;
+
+      > svg {
+        grid-area: icon;
+        width: 64px;
+        height: 64px;
+      }
+
+      > h3 {
+        grid-area: title;
+        font-size: 28px;
+      }
+
+      > p {
+        grid-area: text;
+      }
+    }
+  }
 }
 .banner {
   color: $color;
@@ -73,10 +141,11 @@ $color: #196e6a;
     }
   }
 }
-.icon {
-       width: 3em; height: 3em;
-       vertical-align: -0.15em;
-       fill: currentColor;
-       overflow: hidden;
-    }
+/* .icon {
+  width: 3em;
+  height: 3em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+} */
 </style>

@@ -16,8 +16,9 @@
         <div class="toggleAside" @click="toggleMenu"></div>
         <div class="menu">
             <ul>
-                <li>菜单1</li>
-                <li>菜单2</li>
+                <li>
+                    <router-link to="/doc">文档</router-link>
+                </li>
             </ul>  
         </div>
     </div>
@@ -80,7 +81,7 @@ $color:#196e6a;
     }
 }
     .icon {
-       width: 3em; height: 3em;
+       width: 2em; height: 2em;
        vertical-align: -0.15em;
        fill: currentColor;
        overflow: hidden;
