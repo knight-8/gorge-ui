@@ -2,7 +2,23 @@
  * @Author: jiajunwa@outlook.com jiajunwa@outlook.com
  * @Date: 2022-08-11 21:41:45
  * @LastEditors: jiajunwa@outlook.com jiajunwa@outlook.com
- * @LastEditTime: 2022-09-06 22:01:46
+ * @LastEditTime: 2023-02-10 01:57:15
+ * @FilePath: \com-ui-1\src\router.ts
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
+/*
+ * @Author: jiajunwa@outlook.com jiajunwa@outlook.com
+ * @Date: 2022-08-11 21:41:45
+ * @LastEditors: jiajunwa@outlook.com jiajunwa@outlook.com
+ * @LastEditTime: 2023-02-09 22:42:01
+ * @FilePath: \com-ui-1\src\router.ts
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
+/*
+ * @Author: jiajunwa@outlook.com jiajunwa@outlook.com
+ * @Date: 2022-08-11 21:41:45
+ * @LastEditors: jiajunwa@outlook.com jiajunwa@outlook.com
+ * @LastEditTime: 2023-02-09 22:41:01
  * @FilePath: \com-ui-1\src\router.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -15,6 +31,9 @@ import DialogDemo from './components/DialogDemo.vue'
 import TabsDemo from './components/TabsDemo.vue'
 import DocDemo from './components/DocDemo.vue'
 import SlideDemo from './components/SlideDemo.vue'
+import Intro from './views/Intro.vue'
+import GetStarted from './views/GetStarted.vue'
+import Install from './views/Install.vue'
 
 const history = createWebHashHistory()
 export const router = createRouter({
@@ -25,6 +44,9 @@ export const router = createRouter({
          component:Doc ,
          children:[
             {path: '', component: DocDemo},
+            {path: 'intro', component: Intro},
+            {path: 'get-started', component: GetStarted},
+            {path: 'install', component: Install},
             {path: 'switch', component: SwitchDemo},
             {path: 'button', component: ButtonDemo},
             {path: 'dialog', component: DialogDemo},

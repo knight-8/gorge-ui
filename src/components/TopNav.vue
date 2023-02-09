@@ -9,9 +9,11 @@
 <template>
     <div class="topnav">
         <div class="logo">
-            <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-jie-copy"></use>
-            </svg>
+            <router-link to="/">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-jie-copy"></use>
+                </svg>
+            </router-link>    
         </div>
         <div v-if="toggleMenuButtonVisible" class="toggleAside" @click="toggleMenu"></div>
         <div class="menu">
