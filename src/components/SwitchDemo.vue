@@ -2,7 +2,7 @@
  * @Author: jiajunwa@outlook.com jiajunwa@outlook.com
  * @Date: 2022-08-10 20:45:08
  * @LastEditors: jiajunwa@outlook.com jiajunwa@outlook.com
- * @LastEditTime: 2023-02-11 04:23:16
+ * @LastEditTime: 2023-02-12 01:58:10
  * @FilePath: \com-ui-1\src\components\SwitchDemo.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -18,11 +18,28 @@
 <div>
   <h1>Switch 组件示例 </h1>
   <div class="demo">
-    <Switch1Demo/>
+    <h2>常规用法</h2> 
+    <div class="demo-component">
+      <component :is="Switch1Demo" />
+    </div>
+    <div class="demo-actions">
+      <Button>查看代码</Button>
+    </div>
+    <div class="demo-code">
+      <pre>{{Switch1Demo.__sourceCode}}</pre>
+    </div>
   </div>
   <div class="demo">
-    <h2>支持 disabled </h2>
-    <Switch2Demo/>
+    <h2>支持 disabled </h2> 
+    <div class="demo-component">
+      <component :is="Switch2Demo" />
+    </div>
+    <div class="demo-actions">
+      <Button>查看代码</Button>
+    </div>
+    <div class="demo-code">
+      <pre>{{Switch2Demo.__sourceCode}}</pre>
+    </div>
   </div>
 </div>
 </template>
@@ -34,17 +51,18 @@ import Button from '../lib/Button.vue'
 import Switch1Demo from './Switch1demo.vue'
 import Switch2Demo from './Switch2demo.vue'
 
+
 export default {
   components: {
-    Switch1Demo,
-    Switch2Demo,
     Switch,
     Button
   },
   setup() {
     const bool = ref(false)
     return {
-      bool
+      bool,
+      Switch1Demo,
+      Switch2Demo
     }
   }
 }
