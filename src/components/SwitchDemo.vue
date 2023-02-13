@@ -2,7 +2,7 @@
  * @Author: jiajunwa@outlook.com jiajunwa@outlook.com
  * @Date: 2022-08-10 20:45:08
  * @LastEditors: jiajunwa@outlook.com jiajunwa@outlook.com
- * @LastEditTime: 2023-02-12 04:16:45
+ * @LastEditTime: 2023-02-13 16:17:00
  * @FilePath: \com-ui-1\src\components\SwitchDemo.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -24,19 +24,12 @@
 
 <script lang="ts">
 import { ref } from 'vue'
-import Switch  from '../lib/Switch.vue'
-import Button from '../lib/Button.vue'
 import Switch1Demo from './Switch1demo.vue'
 import Switch2Demo from './Switch2demo.vue'
-import 'prismjs'
-import 'prismjs/themes/prism.css'
-const Prism = (window as any).Prism
 import Demo from './Demo.vue'
 
 export default {
   components: {
-    Switch,
-    Button,
     Demo
   },
   setup() {
@@ -45,7 +38,6 @@ export default {
       bool,
       Switch1Demo,
       Switch2Demo,
-      Prism
     }
   }
 }
