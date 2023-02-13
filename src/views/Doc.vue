@@ -2,7 +2,7 @@
  * @Author: jiajunwa@outlook.com jiajunwa@outlook.com
  * @Date: 2022-08-05 03:33:11
  * @LastEditors: jiajunwa@outlook.com jiajunwa@outlook.com
- * @LastEditTime: 2023-02-10 02:11:54
+ * @LastEditTime: 2023-02-14 01:34:23
  * @FilePath: \com-ui-1\src\views\Doc.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -63,6 +63,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+$aside-index:1;
 .layout{
     display: flex;
     flex-direction: column;
@@ -97,6 +98,7 @@ aside {
     top: 0;
     left: 0;
     padding-top: 70px;
+    z-index: $aside-index;
 }
     h2 {
         margin-bottom: 4px;
