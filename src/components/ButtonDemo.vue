@@ -2,71 +2,45 @@
  * @Author: jiajunwa@outlook.com jiajunwa@outlook.com
  * @Date: 2022-08-11 22:52:10
  * @LastEditors: jiajunwa@outlook.com jiajunwa@outlook.com
- * @LastEditTime: 2022-08-30 01:33:59
+ * @LastEditTime: 2023-02-13 17:23:43
+ * @FilePath: \com-ui-1\src\components\ButtonDemo.vue
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!--
+ * @Author: jiajunwa@outlook.com jiajunwa@outlook.com
+ * @Date: 2022-08-11 22:52:10
+ * @LastEditors: jiajunwa@outlook.com jiajunwa@outlook.com
+ * @LastEditTime: 2023-02-13 17:22:06
  * @FilePath: \com-ui-1\src\components\Button.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <template>
-    <div>这是Button页面</div>
-    <h1>示例1</h1>
-        <Button>你好</Button>
-        <Button theme="button">你好</Button>
-        <Button theme="link">你好</Button>
-        <Button theme="text">你好</Button>
-     <h2>示例2</h2>
-        <div>
-            <Button size="big">大大</Button>
-            <Button>普通</Button>
-            <Button size="small">小小</Button>  
-        </div> 
-        <div>
-            <Button theme="link" size="big">大大</Button>
-            <Button theme="link">普通</Button>
-            <Button theme="link" size="small">小小</Button>  
-        </div>
-        <div>
-            <Button size="big" theme="text">大大</Button>
-            <Button theme="text">普通</Button>
-            <Button size="small" theme="text">小小</Button>  
-        </div>
-        <h2>示例3</h2>
-        <div>
-            <Button level="main">主要按钮</Button>
-            <Button>普通按钮</Button>
-            <Button level="danger">危险按钮</Button>  
-        </div> 
-        <div>
-            <Button theme="link" level="main">主要链接按钮</Button>
-            <Button theme="link">普通链接按钮</Button>
-            <Button theme="link" level="danger">危险链接按钮</Button>  
-        </div>
-        <div>
-            <Button size="big" level="main">主要文字按钮</Button>
-            <Button theme="text">普通文字按钮</Button>
-            <Button size="small" level="danger">危险文字按钮</Button>  
-        </div>
-        <h1>示例4</h1>
-        <div>
-            <Button disabled>禁用按钮</Button>
-            <Button theme="link" disabled>禁用链接按钮</Button>
-            <Button theme="text" disabled>禁用文本按钮</Button>
-        </div>
-        <h1>示例5</h1>
-        <div>
-            <Button loading>加载中</Button>
-            <Button>加载完毕</Button>
-        </div>
+    <h1>Button示例</h1>
+        <Demo :component="Button1demo" />
+        <Demo :component="Button2demo" />
+        <Demo :component="Button3demo" />
+        <Demo :component="Button4demo" />
+        <Demo :component="Button5demo" />
 </template>
 
 <script lang="ts">
-import Button from "../lib/Button.vue"
+import Demo from "./Demo.vue"
+import Button1demo from './Button1demo.vue'
+import Button2demo from './Button2demo.vue'
+import Button3demo from './Button3demo.vue'
+import Button4demo from './Button4demo.vue'
+import Button5demo from './Button5demo.vue'
+
 export default({
-    components: {Button},
+    components: {Demo},
     setup(){
-        const onClick = ()=>{
-            console.log('你好'); 
+        return {
+            Button1demo,
+            Button2demo,
+            Button3demo,
+            Button4demo,
+            Button5demo
         }
-        return {onClick}
     }
 })
 </script>
