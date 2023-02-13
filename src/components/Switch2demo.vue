@@ -9,6 +9,7 @@
 <script lang="ts">
 import { ref } from "vue";
 import Switch from "../lib/Switch.vue";
+import disabled from "../lib/Button.vue"
 export default {
   components: {
     Switch,

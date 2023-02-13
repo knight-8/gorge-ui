@@ -2,7 +2,7 @@
  * @Author: jiajunwa@outlook.com jiajunwa@outlook.com
  * @Date: 2022-08-10 20:45:08
  * @LastEditors: jiajunwa@outlook.com jiajunwa@outlook.com
- * @LastEditTime: 2023-02-12 04:03:58
+ * @LastEditTime: 2023-02-12 04:16:45
  * @FilePath: \com-ui-1\src\components\SwitchDemo.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -16,35 +16,9 @@
 -->
 <template>
 <div>
-  <h1>Switch 组件示例 </h1>
-  <div class="demo">
-    <h2>常规用法</h2> 
-    <div class="demo-component">
-      <component :is="Switch1Demo" />
-    </div>
-    <div class="demo-actions">
-      <Button>查看代码</Button>
-    </div>
-    <div class="demo-code">
-      <pre class="language-html" 
-      v-html="Prism.highlight(Switch1Demo.__sourceCode, 
-      Prism.languages.html, 'html')" />
-    </div>
-  </div>
-  <div class="demo">
-    <h2>支持 disabled </h2> 
-    <div class="demo-component">
-      <component :is="Switch2Demo" />
-    </div>
-    <div class="demo-actions">
-      <Button>查看代码</Button>
-    </div>
-    <div class="demo-code">
-      <pre class="language-html" 
-      v-html="Prism.highlight(Switch2Demo.__sourceCode, 
-      Prism.languages.html, 'html')" />
-    </div>
-  </div>
+  <h2>Switch 组件示例 </h2>
+  <Demo :component="Switch1Demo" />
+  <Demo :component="Switch2Demo" />
 </div>
 </template>
 
@@ -57,11 +31,13 @@ import Switch2Demo from './Switch2demo.vue'
 import 'prismjs'
 import 'prismjs/themes/prism.css'
 const Prism = (window as any).Prism
+import Demo from './Demo.vue'
 
 export default {
   components: {
     Switch,
-    Button
+    Button,
+    Demo
   },
   setup() {
     const bool = ref(false)
