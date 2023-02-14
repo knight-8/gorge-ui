@@ -2,7 +2,7 @@
  * @Author: jiajunwa@outlook.com jiajunwa@outlook.com
  * @Date: 2022-08-05 03:33:17
  * @LastEditors: jiajunwa@outlook.com jiajunwa@outlook.com
- * @LastEditTime: 2023-02-09 15:22:34
+ * @LastEditTime: 2023-02-14 20:17:18
  * @FilePath: \com-ui-1\src\views\Home.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -11,8 +11,8 @@
     <div class="topnavAndBanner">
       <TopNav />
       <div class="banner">
-        <h1>GorgeUI</h1>
-        <h2>一个炫目的UI框架</h2>
+        <h1>Gorge—UI</h1>
+        <h2>一个炫目的 UI框架</h2>
         <p class="actions">
           <a href="https://github.com/knight-8/gorge-ui">Github</a>
           <router-link to="/Doc">开始</router-link>
@@ -126,10 +126,11 @@ $color: #196e6a;
   padding: 100px 0;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
   //background: lightgreen;
   > .actions {
-    padding: 8px 0;
+    padding: 18px 0;
     a {
       margin: 0 8px;
       background: $green;
@@ -144,11 +145,4 @@ $color: #196e6a;
     }
   }
 }
-/* .icon {
-  width: 3em;
-  height: 3em;
-  vertical-align: -0.15em;
-  fill: currentColor;
-  overflow: hidden;
-} */
 </style>

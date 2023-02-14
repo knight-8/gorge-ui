@@ -2,7 +2,7 @@
  * @Author: jiajunwa@outlook.com jiajunwa@outlook.com
  * @Date: 2022-08-11 21:41:45
  * @LastEditors: jiajunwa@outlook.com jiajunwa@outlook.com
- * @LastEditTime: 2023-02-14 01:28:06
+ * @LastEditTime: 2023-02-14 23:05:33
  * @FilePath: \com-ui-1\src\router.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -29,9 +29,9 @@ import SwitchDemo from './components/SwitchDemo.vue'
 import ButtonDemo from './components/ButtonDemo.vue'
 import DialogDemo from './components/DialogDemo.vue'
 import TabsDemo from './components/TabsDemo.vue'
-import Intro from './views/Intro.vue'
-import GetStarted from './views/GetStarted.vue'
-import Install from './views/Install.vue'
+import intro from '../markdown/intro.md'
+import getStarted  from '../markdown/get-started.md'
+import install from '../markdown/install.md'
 
 import Markdown from './components/Markdown.vue'
 import {h} from 'vue'

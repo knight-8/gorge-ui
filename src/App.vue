@@ -23,13 +23,12 @@ export default {
     router.afterEach(() => {
       if(width <= 500){
         asideVisible.value = false
-        console.log("路由切换了2")
+        //console.log("路由切换了2")
       } 
     })
   },
   mounted(){
     console.log('重新编译了');
-    
   },
   components: {
     
