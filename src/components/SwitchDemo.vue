@@ -18,14 +18,14 @@
 <div>
   <h2>Switch 组件示例 </h2>
   <Demo :component="Switch1Demo" />
-  <Demo :component="Switch2Demo" />
+  <!-- <Demo :component="Switch2Demo" /> -->
 </div>
 </template>
 
 <script lang="ts">
 import { ref } from 'vue'
 import Switch1Demo from './Switch1demo.vue'
-import Switch2Demo from './Switch2demo.vue'
+/* import Switch2Demo from './Switch2demo.vue' */
 import Demo from './Demo.vue'
 
 export default {
@@ -37,7 +37,7 @@ export default {
     return {
       bool,
       Switch1Demo,
-      Switch2Demo,
+      /* Switch2Demo, */
     }
   }
 }
